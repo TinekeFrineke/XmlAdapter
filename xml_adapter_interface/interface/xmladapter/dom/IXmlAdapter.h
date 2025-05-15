@@ -18,8 +18,6 @@ public:
 
     virtual std::vector<IXmlElement*> elements() = 0;
     virtual std::vector<IXmlAttribute*> attributes() = 0;
-
-    virtual 
 };
 
 } // namespace DOM

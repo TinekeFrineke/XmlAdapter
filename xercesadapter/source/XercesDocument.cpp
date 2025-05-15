@@ -8,7 +8,7 @@ namespace xerces {
 
 
 Document::Document()
-    : m_element(std::make_unique<Element>())
+    : m_element(std::make_unique<Element>("Document"))
 {
 }
 

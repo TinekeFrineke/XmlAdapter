@@ -1,5 +1,6 @@
 
-#include <iostream>
+#include <gtest/gtest.h>
+
 
 #include "XercesDocument.h"
 #include "XercesElement.h"
@@ -7,10 +8,8 @@
 
 int main(int argc, const char** argv)
 {
-    xerces::Document document;
-    auto element1 = document.addChild("Node 1");
-    element1->addChild("Node 3");
+    ::testing::InitGoogleTest(&argc, const_cast<char **>(argv));
 
-    auto element2 = document.addChild("Node 2");
+    RUN_ALL_TESTS();
     return 0;
 }

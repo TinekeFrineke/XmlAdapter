@@ -15,6 +15,7 @@ class IXmlElement
 public:
     virtual ~IXmlElement() = default;
 
+    virtual std::string name() const = 0;
     virtual std::vector<IXmlElement*> children() const = 0;
     virtual std::vector<IXmlAttribute*> attributes() const = 0;
     virtual IXmlElement* addChild(const std::string& name) = 0;

@@ -12,14 +12,9 @@ add_library(xerces_adapter STATIC
 
 target_include_directories(xerces_adapter PRIVATE
     include
-
 )
 
 target_link_libraries(xerces_adapter PUBLIC
-    xml_adapter_interface
-)
-
-target_link_libraries(xerces_adapter PRIVATE
     xml_adapter_interface
 )
 

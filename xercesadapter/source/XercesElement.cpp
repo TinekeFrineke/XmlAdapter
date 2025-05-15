@@ -8,31 +8,37 @@
 namespace xerces {
 
 
-Element::Element()
+Element::Element( const std::string& name)
+    : m_name(name)
 {
+}
+
+Element::~Element() = default;
+
+std::string Element::name() const
+{
+    return m_name;
 }
 
 std::vector<DOM::IXmlElement*> Element::children() const
 {
     std::vector<DOM::IXmlElement*> output;
-    std::transform(m_children.begin(), m_children.end(), output.begin(),
-                   [] (const auto& in) { return in.get(); }
-    );
+    for (const auto& child : m_children)
+        output.push_back(child.get());
     return output;
 }
 
 std::vector<DOM::IXmlAttribute*> Element::attributes() const
 {
     std::vector<DOM::IXmlAttribute*> output;
-    std::transform(m_attributes.begin(), m_attributes.end(), output.begin(),
-                   [] (const auto& in) { return in.second.get(); }
-    );
+    for (const auto& attribute : m_attributes)
+        output.push_back(attribute.second.get());
     return output;
 }
 
 DOM::IXmlElement* Element::addChild(const std::string& name)
 {
-    m_children.push_back(std::make_unique<Element>());
+    m_children.push_back(std::make_unique<Element>(name));
     return m_children.back().get();
 }
 

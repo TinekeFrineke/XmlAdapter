@@ -1,5 +1,9 @@
 
 add_executable(TestXercesAdapter
+    TestAdapterFactory.cpp
+    TestAttribute.cpp
+    TestDocument.cpp
+    TestElement.cpp
     TestMain.cpp
 )
 
@@ -8,5 +12,6 @@ target_include_directories(TestXercesAdapter PRIVATE
 )
 
 target_link_libraries(TestXercesAdapter
+    gtest::gtest
     xerces_adapter
 )
