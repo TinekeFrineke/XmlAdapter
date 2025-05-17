@@ -33,3 +33,5 @@
 /.vs/
 *.vcxproj.filters
 *.vcxproj.user
+/.vscode/
+/build/

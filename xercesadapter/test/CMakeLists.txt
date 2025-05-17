@@ -1,9 +1,7 @@
 
 add_executable(TestXercesAdapter
-    TestAdapterFactory.cpp
-    TestAttribute.cpp
-    TestDocument.cpp
-    TestElement.cpp
+    TestXercesAdapterFactory.cpp
+    TestXercesAdapter.cpp
     TestMain.cpp
 )
 

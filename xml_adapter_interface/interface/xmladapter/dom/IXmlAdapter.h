@@ -1,23 +1,23 @@
 
 #pragma once
 
-
+#include <iosfwd>
+#include <memory>
 #include <string>
 #include <vector>
 
 
 namespace DOM {
 
-class IXmlAttribute;
-class IXmlElement;
+struct XmlDocument;
 
 class IXmlAdapter
 {
 public:
     virtual ~IXmlAdapter() = default;
 
-    virtual std::vector<IXmlElement*> elements() = 0;
-    virtual std::vector<IXmlAttribute*> attributes() = 0;
+    virtual std::unique_ptr<XmlDocument> read(const std::istream& input) = 0;
+    virtual void write(const XmlDocument& document, std::ostream& output) = 0;
 };
 
 } // namespace DOM

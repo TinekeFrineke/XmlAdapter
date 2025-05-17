@@ -1,12 +1,13 @@
 #pragma once
 
+#include <memory>
 
 namespace DOM {
-class IXmlDocument;
+class IXmlAdapter;
 } // namespace DOM
 
 namespace xerces {
 
-std::unique_ptr<DOM::IXmlDocument> createDocument();
+std::unique_ptr<DOM::IXmlAdapter> createAdapter();
 
 } // namespace xerces

@@ -1,17 +1,17 @@
 
 add_library(xerces_adapter STATIC
+    source/XercesAdapter.cpp
     source/XercesAdapterFactory.cpp
-    source/XercesAttribute.cpp
-    source/XercesDocument.cpp
-    source/XercesElement.cpp
-    include/XercesAttribute.h
-    include/XercesDocument.h
-    include/XercesElement.h
+    include/XercesAdapter.h
     interface/xercesadapter/XercesAdapterFactory.h
 )
 
+target_include_directories(xerces_adapter PUBLIC
+    interface/xercesadapter/
+)
+
 target_include_directories(xerces_adapter PRIVATE
-    include
+    include/
 )
 
 target_link_libraries(xerces_adapter PUBLIC
